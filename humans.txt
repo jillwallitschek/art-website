@@ -1,0 +1,19 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+All art including this website was produced and copyrighted by me.
+Website boilerplate/ lightbox is listed below
+
+# THANKS
+Boilerplate:
+https://html5boilerplate.com/
+Lightbox: Lokesh Dhakar:
+http://lokeshdhakar.com/projects/lightbox2/
+Studio Gothic- Zeta Fonts:
+http://www.zetafonts.com/studio-gothic
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5
+    Apache Server Configs, jQuery, Modernizr, Normalize.css
