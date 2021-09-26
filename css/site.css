@@ -5,33 +5,191 @@
     src:url("../fonts/studio-gothic/StudioGothicAlternate-ExtraLigh Trial.ttf");
 }
 
+@font-face {
+    font-family: "Stick No Bills";
+    src: url("../fonts/Stick_No_Bills/StickNoBills-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: railway;
+    src: url("../fonts/Raleway/Raleway-VariableFont_wght.ttf");
+}
+
+/*new*/
 html{
     width:100%;
     height:100%;
+    margin: 0;
+    min-width: 300px;
+    min-height: 500px;
 }
 
 body{
     width:100%;
-
     height:100%;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 15px;
+    font-family: railway, 'Times New Roman', Times, serif;
+    font-weight: 600;
+    font-size: 16px;
+    margin: 0;
 }
 
-.bodycontainer {
-    min-height:100%;
-    margin:0 auto;
-    text-align: center;
-    padding: 0px 20px 40px 20px;
+div, p{
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.4em;
 }
 
-.bodycontainer a:hover{
-    opacity: 0.7;
+.row{
+    width:100%;
+    font-size: 0;
 }
 
-.bodycontainer a{
-    color:white;
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
+
+h1, h2, h3, h4, h5, h6{
+    font-family: studiogothic;
+    letter-spacing: 0.1em;
+    margin: 0;
+    line-height: 1.2em;
+    overflow: hidden;
+}
+
+/*General*/
+
+.uppercase{
+    text-transform: uppercase;
+}
+
+.inline-block{
+    display:inline-block;
+}
+
+.vh-100{
+    height: 100vh;
+}
+
+.width-50{
+    width: 50%;
+    vertical-align: top;
+    position: relative;
+}
+
+.float-right{
+    float: right;
+}
+
+.float-right-820{
+    float: inherit;
+    width: 100%;
+}
+
+.float-left{
+    float: left;
+}
+
+.mt-20{
+    margin-top: 20px !important;
+}
+
+.mt-10{
+    margin-top: 10px !important;
+}
+
+.mt-5{
+    margin-top: 5px !important;
+}
+
+.mb-10{
+    margin-bottom: 10px !important;
+}
+
+.mb-5{
+    margin-bottom: 5px !important;
+}
+
+.mr-20{
+    margin-right: 20px !important;
+}
+
+.mr-10{
+    margin-right: 10px !important;
+}
+
+.mr-5{
+    margin-right: 5px !important;
+}
+
+.black{
+    color: black;
+}
+
+.studiogothic{
+    font-family: studiogothic;
+}
+
+.sticknobills{
+    font-family: "Stick No Bills" !important;
+    letter-spacing: 0.2;
+}
+
+/*This page*/
+
+.butterfly{
+    background-color: rgb(37,37,35);
+    width: 100%;
+    height: 100%;
+    color: white;
+}
+
+.butterfly .bg{
+    background-image: url(../images/backgrounds/moths2.jpg);
+    background-size: contain;
+    background-repeat: space;
+    width: 100%;
+    height: calc(100% - 10px);
+    margin-top: 10px;
+    position: fixed; 
+}
+
+.body-content{
+    position: relative;
+}
+
+.textbox{
+    background-color: rgba(78, 180, 159, 0.7);
+    padding: 10px;
+    margin-left: 10%;
+    margin-top: 300px;
+    border-radius: 10px 0 0 10px;
+}
+
+.textbox.main{
+    padding: 30px 10px;
+    min-height: 300px;
+}
+
+.textbox-img-container{
+    display: block;
+    min-height: 320px;
+}
+
+.textbox .textbox-img{
+    position: absolute;
+    left: 30px;
+    border-radius: 35px;
+}
+
+.artist-statement{
+    padding: 0;
+}
+
+/*nav*/
 
 nav{
     height:30px;
@@ -72,11 +230,14 @@ nav ul li a:hover {
     color: grey;
 }
 
+/*footer*/
+
 footer{
     height:32px;
     width:100%;
     text-align:center;
     background-color:white; 
+    color: black;
     position: fixed;
     bottom: 0;
     border-top: solid 0.5px rgba(115, 115, 115, 0.7);
@@ -87,80 +248,43 @@ footer p{
     padding-top:4px;
 }
 
-.pagehead0{
-    box-shadow: 0px 0.25px 5px rgb(115, 115, 115);
-    margin-top: -3px;
-    margin-bottom:10px;
-    padding-top:30px;
-    padding-bottom:15px;
-    overflow: hidden;
+/*media*/
+
+
+@media (min-width: 450px) {
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+
+    .butterfly .bg{
+    background-size: contain;
+    background-repeat: repeat-x;
+    height: calc(100% - 100px);
+    margin-top: 100px;
+}
 }
 
-.pagehead1{
-    margin:-30px auto -20px auto;
-    padding-right:50px;
-    text-align:right;
-    height:50px;
+@media (min-width: 820px){
+    .textbox-img-container{
+        display: inline-block;
+        min-height: 0;
+    }
+    .float-right-820{
+        float: right;
+        width: auto;
+    }
+
+    .artist-statement{
+    padding-left: 400px;
 }
-
-.pagehead1 p a:hover{
-    opacity: 0.5;
-    margin:0px;
-    padding:0px;
 }
-
-.pagehead2{
-    margin: 0px auto;
-    padding-bottom:3px;
-    text-align:center;
-    clear:both;
-}
-
-.pagehead2 p{
-
-    margin: 0px auto;
-    font-family:studiogothic;
-    font-size:15px;
-}
-
-img{
-    border-radius: 5px;
-    display:inline;
-    padding: 1.5px 0px;
-    height:auto;
-    max-width:100%;
-}
-
-h1{
-    margin:0;  
-    padding-left: 5px;
-    font-size: 33px;
-    font-family:studiogothic;
-    text-transform:uppercase;
-}
-
-h2{
-    margin:0;  
-    padding-left: 5px;
-    font-size: 18px;
-    font-family:studiogothic;
-}
-
-
-
-
-
-
-/* 
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-    #myImg:hover {opacity: 0.7;}
-
-    .modal-content {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-*/
 
