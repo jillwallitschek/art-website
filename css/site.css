@@ -1,18 +1,22 @@
 @charset "utf-8";
-
 @font-face {
     font-family:studiogothic;
     src:url("../fonts/studio-gothic/StudioGothicAlternate-ExtraLigh Trial.ttf");
 }
-
 @font-face {
     font-family: "Stick No Bills";
     src: url("../fonts/Stick_No_Bills/StickNoBills-VariableFont_wght.ttf");
 }
-
 @font-face {
     font-family: railway;
     src: url("../fonts/Raleway/Raleway-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: 'Material Icons';
+    src: url(../fonts/material-design-icons-3.0.1/iconfont/MaterialIcons-Regular.eot); /* For IE6-8 */
+    src: url(../fonts/material-design-icons-3.0.1/iconfont/MaterialIcons-Regular.ttf); 
+    src: url(../fonts/material-design-icons-3.0.1/iconfont/MaterialIcons-Regular.woff); 
+    src: url(../fonts/material-design-icons-3.0.1/iconfont/MaterialIcons-Regular.woff2); 
 }
 
 /*new*/
@@ -129,6 +133,26 @@ h1, h2, h3, h4, h5, h6{
     color: black;
 }
 
+.text-center{
+    text-align:center;
+}
+
+.text-right{
+    text-align: right;
+}
+
+.text-left{
+    text-align: left;
+}
+
+.relative{
+    position: relative;
+}
+
+.absolute{
+    position: absolute;
+}
+
 .studiogothic{
     font-family: studiogothic;
 }
@@ -136,6 +160,50 @@ h1, h2, h3, h4, h5, h6{
 .sticknobills{
     font-family: "Stick No Bills" !important;
     letter-spacing: 0.2;
+}
+
+.material-icons{
+    font-weight: 400;
+    font-family: 'Material Icons';
+    font-size: 30px;
+}
+
+.pointer:hover{
+    cursor: pointer;
+}
+
+#cursor-trail{
+    width: 20px;
+    height: 20px;
+    background-color: rgba(113,187, 172, 0.9);
+    border-radius: 100% 80% 100% 90%;
+    position: fixed;
+    z-index:999;
+    animation: trail linear 2s infinite;
+}
+
+@-webkit-keyframes trail {
+    0%      {background-color: rgba(113,187, 172, 0.9); border-radius: 100% 70% 90% 80%;}
+    25%     {background-color: rgba(113,187, 172, 0.7); border-radius: 80% 100% 80% 100%;}
+    50%     {background-color: rgba(113,187, 172, 0.5); border-radius: 80% 100% 80% 100%;}
+    75%     {background-color: rgba(113,187, 172, 0.7); border-radius: 100% 90% 100% 90%;}
+    100%    {background-color: rgba(113,187, 172, 0.9); border-radius: 100% 70% 90% 80%;}
+}
+
+@-moz-keyframes trail {
+    0%      {background-color: rgba(113,187, 172, 0.9); border-radius: 100% 70% 90% 80%;}
+    25%     {background-color: rgba(113,187, 172, 0.7); border-radius: 80% 100% 80% 100%;}
+    50%     {background-color: rgba(113,187, 172, 0.5); border-radius: 80% 100% 80% 100%;}
+    75%     {background-color: rgba(113,187, 172, 0.7); border-radius: 100% 90% 100% 90%;}
+    100%    {background-color: rgba(113,187, 172, 0.9); border-radius: 100% 70% 90% 80%;}
+}
+
+@keyframes trail {
+    0%      {background-color: rgba(113,187, 172, 0.9); border-radius: 100% 70% 90% 80%;}
+    25%     {background-color: rgba(113,187, 172, 0.7); border-radius: 80% 100% 80% 100%;}
+    50%     {background-color: rgba(113,187, 172, 0.5); border-radius: 80% 100% 80% 100%;}
+    75%     {background-color: rgba(113,187, 172, 0.7); border-radius: 100% 90% 100% 90%;}
+    100%    {background-color: rgba(113,187, 172, 0.9); border-radius: 100% 70% 90% 80%;}
 }
 
 /*This page*/
@@ -189,38 +257,58 @@ h1, h2, h3, h4, h5, h6{
     padding: 0;
 }
 
+.hover-selection:hover{
+    opacity: 0.8;
+    font-size: 35px;
+    filter: drop-shadow(0px 0px 20px #cde9ff);
+    top: -3px;
+    left: -3px;
+    position: absolute;
+    transition: opacity 0.5s, font-size 0.5s, filter 0.5s, top 0.5s, left 0.5s;
+}
+
+/* animation: 2s linear selectionHover 1; */
+@-webkit-keyframes selectionHover {
+    0%    {opacity:1; font-size:30px;}
+    50%   {opacity: 0.9; font-size: 35px;}
+    100%  {opacity: 0.85; font-size: 40px;}
+}
+
+@-moz-keyframes selectionHover {
+    0%    {opacity:1; font-size:30px;}
+    50%   {opacity: 0.9; font-size: 35px;}
+    100%  {opacity: 0.85; font-size: 40px;}
+}
+
+
+@keyframes selectionHover {
+    0%    {opacity:1; font-size:30px;}
+    50%   {opacity: 0.9; font-size: 35px;}
+    100%  {opacity: 0.85; font-size: 40px;}
+}
+
+
 /*nav*/
 
 nav{
-    height:30px;
-    margin-bottom:10px;
-    padding:0px;
-    font-size:17px;
-    text-align:center;
-    text-transform:uppercase;
+    margin: 10px 0;
 }
 
 nav ul{
-    height:30px;
-    margin:0px;
-    padding:3px 0px;
+    display: flex;
     list-style-type: none;
     text-align:center;
+    padding: 0px 20px;
 }
 
 nav ul li{
-    margin: 0px 20px;
-    height:30px;
-    display: inline;
+    width: 100%;
+    display: block;
+    position: relative;
 }
 
 nav ul li a {
-    height:28px;
-    padding-top:2px;
-    text-decoration: none;
-    font-family:studiogothic;
-    text-align: center;
-    color: black;
+
 }
 
 nav ul li a:hover {

@@ -10,18 +10,30 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="keywords" content="art, painting, self-portraits, pet portraits,">
         <meta property="og:image" content="img/Acrylic-SunFlower.jpg">
-
+        <!--manifest-->
         <link rel="manifest" href="site.webmanifest">
-        <link rel="apple-touch-icon" href="icon.png">
         <!-- Place favicon.ico in the root directory -->
+        <link rel="apple-touch-icon" href="icon.png">
+        <!--css sheets-->
         <link rel="stylesheet" href="css/site.css">
-
-            <!-- modal lightbox -->
-    <link rel="stylesheet" href="css/lightbox.css">
-    <script type="text/javascript" src="js/lightbox-plus-jquery.js"></script>
-        
+        <link rel="stylesheet" href="css/lightbox.css">
+        <!-- modal lightbox -->
+        <script type="text/javascript" src="js/lightbox-plus-jquery.js"></script>
+        <!--my scripts-->
+        <script type="text/javascript" src="js/main.js"></script>
+        <!--for developing-->
+        <script type="text/javascript" src="http://livejs.com/live.js"></script>    
     </head>
     <body class="butterfly"> 
+        <div id="cursor-trail"></div>
+        <nav>
+            <ul>
+                <li class="text-left pointer"><a class=""><span>icon</span></a></li>
+                <li class="pointer"><span class="relative"><a class="hover-selection material-icons absolute">menu</a></span></li>
+                <li class="text-right pointer"><span class="relative" style="left:-25px;"><a class="material-icons hover-selection absolute">mail</a></span></li>
+            </ul>
+        </nav>
+        <!--body-->
         <div class="bg"></div>
         <div class="body-content">
             <div class="textbox main">
@@ -41,13 +53,10 @@
                 </div>
             </div>
         </div>
-
-
+        <!--footer-->
         <footer>
             <p><small>&copy; Copyright 2017 Jill Wallitschek: Web Design and Photos</small></p>
         </footer>
-
-    
 
         <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
         <script>
