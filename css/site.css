@@ -66,6 +66,10 @@ h1, h2, h3, h4, h5, h6{
 
 /*General*/
 
+.hide{
+    display:none;
+}
+
 .uppercase{
     text-transform: uppercase;
 }
@@ -179,7 +183,11 @@ h1, h2, h3, h4, h5, h6{
     border-radius: 100% 80% 100% 90%;
     position: fixed;
     z-index:999;
+}
+
+.cursor-animation{
     animation: trail linear 2s infinite;
+    /*moz and webkit*/
 }
 
 @-webkit-keyframes trail {
