@@ -2,7 +2,8 @@
 
 var cursorTrail;
 var extendedTrail = [];
-lastMouseCoord = [0,0];
+var lastMouseCoord = [0,0];
+var cursorTrailDelay = 200;
 
 //listeners
 
@@ -26,7 +27,7 @@ function trackCursor(event){
         cursorTrail.classList.remove("hide");
     }
     if (event.target.nodeName == "A" || event.target.classList.contains("hover-selection") || event.target.classList.contains("link")){
-        cursorTrail.classList.add("hide");
+        if (!cursorTrail.classList.contains("hide")) setTimeout(()=>{cursorTrail.classList.add("hide");}, cursorTrailDelay);
         return;
     }
     else{
@@ -38,7 +39,7 @@ function trackCursor(event){
     cursorTrail.style.left = event.pageX + "px";
     cursorTrail.style.top = event.pageY + "px";
     //makeTrail();
-    }, 200);
+    }, cursorTrailDelay);
     removeAnimationOnStationary(event);
 }
 
@@ -48,7 +49,7 @@ function removeAnimationOnStationary(event){
             cursorTrail.classList.remove("cursor-animation");
             cursorTrail.classList.add("hide");
         }
-    }, 200);
+    }, cursorTrailDelay);
 }
 
 function makeTrail(){
