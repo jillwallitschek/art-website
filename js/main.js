@@ -1,23 +1,43 @@
-//variables
+//////////////////////////variables
+//nav
+var navButton
 
+//cursor
 var cursorTrail;
 var extendedTrail = [];
 var lastMouseCoord = [0,0];
 var cursorTrailDelay = 200;
 
-//listeners
+//slideshow
+var homeSlides;
+var homeSlidesTimer;
+
+//////////////////////////listeners
 
 document.addEventListener('DOMContentLoaded', function() {
+    //nav
+    navButon = document.getElementById("nav-button")
+    navButton.addEventListener("click", toggleNavigation)
+
+    //cursor
     cursorTrail = document.getElementById("cursor-trail");
-    
+
+    //home slideshow
+    homeSlides = document.querySelectorAll("[data-component='home-slides']")
+    console.log(homeSlides);
+    if (homeSlides) homeSlides.forEach(initHomeSlides);
 })
 
 document.addEventListener("mousemove", function(event){
     trackCursor(event);
 });
 
-//cursors
+////////////////////navigation
+function toggleNavigation(event){
+    console.log(event);
+}
 
+//////////////////////cursors
 function trackCursor(event){
     if (!cursorTrail) return;
     lastMouseCoord[0] = event.pageX;
@@ -60,4 +80,25 @@ function makeTrail(){
         //document.body.append(el);
         extendedTrail.push(el.id);
     }
+}
+
+//////////////home slideshow
+function initHomeSlides(slideshow){
+    let slides = document.querySelectorAll(`#${slideshow.id} .home-slide`);
+    //for css animation: opacity chng start = 100 - delay/time*100; animation duration = time
+    var i = 0, time = 6000, delay = 1000; 
+    slides[i].classList.add('active')
+    setTimeout(()=>{slides[i].classList.add('slide-fade')},delay);
+    homeSlidesTimer = setInterval(()=>{
+        var perviousSlide = i;
+        i++;
+        if (i === slides.length) i = 0;
+        if (!slides[perviousSlide] || !slides[i]) return
+        setTimeout(()=>{
+            slides[perviousSlide].classList.remove('active');
+            slides[perviousSlide].classList.remove('slide-fade')
+            slides[i].classList.add('slide-fade')
+        }, delay)
+        slides[i].classList.add('active');
+    }, time)
 }
