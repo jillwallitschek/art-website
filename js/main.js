@@ -13,18 +13,16 @@ var homeSlides;
 var homeSlidesTimer;
 
 //////////////////////////listeners
-
 document.addEventListener('DOMContentLoaded', function() {
     //nav
-    navButon = document.getElementById("nav-button")
-    navButton.addEventListener("click", toggleNavigation)
-
+    navButton = document.getElementById("nav-button");
+    navButton.addEventListener("click", toggleNavigation);
+    
     //cursor
     cursorTrail = document.getElementById("cursor-trail");
 
     //home slideshow
     homeSlides = document.querySelectorAll("[data-component='home-slides']")
-    console.log(homeSlides);
     if (homeSlides) homeSlides.forEach(initHomeSlides);
 })
 
@@ -34,7 +32,7 @@ document.addEventListener("mousemove", function(event){
 
 ////////////////////navigation
 function toggleNavigation(event){
-    console.log(event);
+    console.log(event)
 }
 
 //////////////////////cursors
