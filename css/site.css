@@ -39,7 +39,7 @@ body{
     height:100%;
     font-family: railway, 'Times New Roman', Times, serif;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 16px;
     margin: 0;
     padding: 0;
 }
@@ -52,8 +52,9 @@ div, p{
     overflow-y: auto;
     overflow-x: hidden;
     margin: 0;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 1.4em;
+    font-weight: 500;
 }
 
 .row{
@@ -80,6 +81,10 @@ h1, h2, h3, h4, h5, h6{
 
 .hide{
     display:none;
+}
+
+.opacity-0{
+    opacity: 0;
 }
 
 .block{
@@ -115,6 +120,10 @@ h1, h2, h3, h4, h5, h6{
 
 .float-left{
     float: left;
+}
+
+.mt-70{
+    margin-top: 70px !important;
 }
 
 .mt-20{
@@ -157,8 +166,8 @@ h1, h2, h3, h4, h5, h6{
     font-size: 35px !important
 }
 
-.line-height-42{
-    line-height: 42px !important;
+.nav-line-height{
+    line-height: 28px !important;
 }
 
 .black{
@@ -204,13 +213,23 @@ h1, h2, h3, h4, h5, h6{
     cursor: pointer;
 }
 
+.expand-hover:hover{
+    opacity: 0.8;
+    font-size: 35px;
+    filter: drop-shadow(0px 0px 20px #cde9ff);
+    top: -3px;
+    left: -3px;
+    position: relative;
+    transition: opacity 0.5s, font-size 0.5s, filter 0.5s, top 0.5s, left 0.5s;
+}
+
 #cursor-trail{
     width: 20px;
     height: 20px;
     background-color: rgba(113,187, 172, 0.9);
     border-radius: 100% 80% 100% 90%;
     position: fixed;
-    z-index:999;
+    z-index:10;
 }
 
 .cursor-animation{
@@ -270,6 +289,15 @@ h1, h2, h3, h4, h5, h6{
     position: fixed; 
 }
 
+.page-content{
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+.page-content h1{
+    font-size: 250%;
+}
+
 /*nav*/
 
 nav{
@@ -279,7 +307,7 @@ nav{
     position: relative;
 }
 
-nav ul{
+nav ul.bar{
     display: flex;
     list-style-type: none;
     text-align:center;
@@ -287,18 +315,20 @@ nav ul{
     height: calc(100% - 20px);
 }
 
-nav ul li{
+nav ul.bar li{
     width: 100%;
     display: block;
     position: relative;
     height: 100%;
+    opacity: 1;
+    z-index: 100;
 }
 
-nav ul li a {
+nav ul.bar li a {
     opacity: 1;
 }
 
-nav ul li a:hover {
+nav ul.bar li a:hover {
     height:28px;
     padding-top: 2px;
     color: rgb(204, 204, 204);
@@ -313,6 +343,91 @@ nav ul li a:hover {
     position: absolute;
     transition: opacity 0.5s, font-size 0.5s, filter 0.5s, top 0.5s, left 0.5s;
 }
+
+.expanded-nav-container{
+    display: none;
+}
+
+.expanded-nav .expanded-nav-container{
+    display: block !important;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    -webkit-animation: navDrop 0.2s linear 1;
+    -moz-animation: navDrop 0.2s linear 1;
+    animation: navDrop 0.2s linear 1;
+}
+
+@-webkit-keyframes navDrop {
+    0%    {top:-100vh; opacity: 0}
+    100%  {top: 0px; opacity: 0.7}
+}
+
+@-moz-keyframes navDrop {
+    0%    {top:-100vh; opacity: 0}
+    100%  {top: 0px; opacity: 0.7}
+}
+
+
+@keyframes navDrop {
+    0%    {top:-100vh; opacity: 0}
+    100%  {top: 0px; opacity: 0.7}
+}
+
+#expanded-nav ul{
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    position: relative;
+    top: 20vh;
+}
+
+#expanded-nav li{
+    display: block;
+    width: 100%;
+    line-height: 240%;
+    font-size: 150%;
+    letter-spacing: 3px;
+    font-weight: 500;
+    text-align: center;
+    color: white;
+    position: relative;
+    opacity: 1;
+    z-index: 10;
+    transform: scale(1.2);
+    -webkit-animation: navTextDrop 0.6s linear 1;
+    -moz-animation: navTextDrop 0.6s linear 1;
+    animation: navTextDrop 0.6s linear 1;
+}
+
+@-webkit-keyframes navTextDrop {
+    0%    {height:0px; opacity: 0}
+    100%  {height:60px; opacity: 0.8}
+}
+
+@-moz-keyframes navTextDrop {
+    0%    {height:0px; opacity: 0}
+    100%  {height:60px; opacity: 0.8}
+}
+
+
+@keyframes navTextDrop {
+    0%    {height:0px; opacity: 0}
+    100%  {height:60px; opacity: 0.8}
+}
+
+#expanded-nav li:hover{
+    cursor: pointer;
+    color: rgba(34, 129, 167, 1);
+    font-weight: 600;
+}
+
+.selected{
+    color: rgba(34, 129, 167, 1) !important;
+}
+
 
 /* animation: 2s linear selectionHover 1; */
 @-webkit-keyframes selectionHover {
@@ -337,6 +452,10 @@ nav ul li a:hover {
 #home-link{
     text-decoration: none;
     color: white;
+    min-width: 140px;
+    display: inline-block;
+    height: auto !important;
+    padding: 0 !important;
 }
 
 #home-link:hover, #home-link:hover div{
@@ -345,13 +464,14 @@ nav ul li a:hover {
 
 .name-logo{
     letter-spacing: 3px;
-    font-size: 110%;
+    font-size: 75%;
     line-height:1.2em;
     overflow: hidden;
+    background-color: black;
 }
 
 .sub-logo{
-    font-size: 87%;
+    font-size: 63%;
     letter-spacing: 2px;
     font-weight: lighter;
     line-height: 1.2em;
@@ -437,6 +557,8 @@ footer p{
 
 
 @media (min-width: 450px) {
+    body, div, p{ font-size: 20px;}
+
     .col-1 {width: 8.33%; display: inline-block}
     .col-2 {width: 16.66%; display: inline-block}
     .col-3 {width: 25%; display: inline-block}
@@ -451,6 +573,27 @@ footer p{
     .col-12 {width: 100%; display: inline-block}
 
     #home-slides{ height: 600px;}
+
+    .nav-line-height{ line-height: 42px !important;}
+    #home-link{ min-width: 215px;}
+    .name-logo{ font-size: 110%;}
+    .sub-logo{ font-size: 87%; margin-bottom: -5px;}
+
+    @-webkit-keyframes navTextDrop {
+    0%    {height:0px; opacity: 0}
+    100%  {height:85px; opacity: 0.8}
+    }
+
+    @-moz-keyframes navTextDrop {
+        0%    {height:0px; opacity: 0}
+        100%  {height:85px; opacity: 0.8}
+    }
+
+
+    @keyframes navTextDrop {
+        0%    {height:0px; opacity: 0}
+        100%  {height:85px; opacity: 0.8}
+    }
 
 }
 
