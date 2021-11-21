@@ -19,11 +19,13 @@
     src: url(../fonts/material-design-icons-3.0.1/iconfont/MaterialIcons-Regular.woff2); 
 }
 
-/*new*/
+/*-------------------reset style-------------------*/
 * {
     padding:  0;
     margin: 0;
+    border: 0;
 }
+
 
 html{
     width:100%;
@@ -42,6 +44,7 @@ body{
     font-size: 16px;
     margin: 0;
     padding: 0;
+    line-height: 1;
 }
 
 p::selection, div::selection, h1::selection, h2::selection, h3::selection, h4::selection, h5::selection, h6::selection, li::selection, a::selection{
@@ -57,9 +60,17 @@ div, p{
     font-weight: 500;
 }
 
+div{
+    white-space: nowrap;
+    vertical-align: top;
+}
+
+p, h1, h2, h3, h4, h5, h6, li{
+    white-space: normal;
+}
+
 .row{
     width:100%;
-    font-size: 0;
 }
 
 .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
@@ -67,6 +78,7 @@ div, p{
     margin: 0;
     padding: 0;
     display: block;
+    white-space: normal;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -77,10 +89,10 @@ h1, h2, h3, h4, h5, h6{
     overflow: hidden;
 }
 
-/*General*/
+/*-------------------General-------------------*/
 
 .hide{
-    display:none;
+    display:none !important;
 }
 
 .opacity-0{
@@ -89,6 +101,10 @@ h1, h2, h3, h4, h5, h6{
 
 .block{
     display: block;
+}
+
+.flex{
+    display: flex;
 }
 
 .uppercase{
@@ -122,8 +138,16 @@ h1, h2, h3, h4, h5, h6{
     float: left;
 }
 
+.vertical-align-top{
+    vertical-align: top;;
+}
+
 .mt-70{
     margin-top: 70px !important;
+}
+
+.mt-30{
+    margin-top: 30px !important;
 }
 
 .mt-20{
@@ -166,10 +190,6 @@ h1, h2, h3, h4, h5, h6{
     font-size: 35px !important
 }
 
-.nav-line-height{
-    line-height: 28px !important;
-}
-
 .black{
     color: black;
 }
@@ -184,6 +204,10 @@ h1, h2, h3, h4, h5, h6{
 
 .text-left{
     text-align: left;
+}
+
+.text-justify{
+    text-align: justify;
 }
 
 .relative{
@@ -223,6 +247,7 @@ h1, h2, h3, h4, h5, h6{
     transition: opacity 0.5s, font-size 0.5s, filter 0.5s, top 0.5s, left 0.5s;
 }
 
+/*-------------------cursor-------------------*/
 #cursor-trail{
     width: 20px;
     height: 20px;
@@ -271,40 +296,18 @@ h1, h2, h3, h4, h5, h6{
     100%    {background-color: rgba(113,187, 172, 0.9); border-radius: 100% 70% 90% 80%;}
 }
 
-/*Home page*/
 
-.butterfly{
-    background-color: rgb(37,37,35);
-    width: 100%;
-    height: 100%;
-    color: white;
-}
-
-.butterfly .bg{
-    background-image: url(../images/backgrounds/moths-border.jpg);
-    background-size: contain;
-    background-repeat: space;
-    width: 100%;
-    height: 100%;
-    position: fixed; 
-}
-
-.page-content{
-    margin-left: 10vw;
-    margin-right: 10vw;
-}
-
-.page-content h1{
-    font-size: 250%;
-}
-
-/*nav*/
+/*-------------------nav-------------------*/
 
 nav{
     width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 10;
     position: relative;
+}
+
+.nav-line-height{
+    line-height: 28px !important;
 }
 
 nav ul.bar{
@@ -348,6 +351,28 @@ nav ul.bar li a:hover {
     display: none;
 }
 
+.nav-hide .expanded-nav-container{
+    /*0.2 corresponds to js*/
+    -webkit-animation: navHide 0.2s linear 1 !important; 
+    -moz-animation: navHide 0.2s linear 1 !important;
+    animation: navHide 0.2s linear 1 !important;
+}
+
+@-webkit-keyframes navHide {
+    0%  {top: 0px; opacity: 0.7}
+    100%    {top:-100vh; opacity: 0}
+}
+
+@-moz-keyframes navHide {
+    0%  {top: 0px; opacity: 0.7}
+    100%    {top:-100vh; opacity: 0}
+}
+
+@keyframes navHide {
+    0%  {top: 0px; opacity: 0.7}
+    100%    {top:-100vh; opacity: 0}
+}
+
 .expanded-nav .expanded-nav-container{
     display: block !important;
     position: fixed;
@@ -368,7 +393,6 @@ nav ul.bar li a:hover {
     0%    {top:-100vh; opacity: 0}
     100%  {top: 0px; opacity: 0.7}
 }
-
 
 @keyframes navDrop {
     0%    {top:-100vh; opacity: 0}
@@ -404,18 +428,18 @@ nav ul.bar li a:hover {
 
 @-webkit-keyframes navTextDrop {
     0%    {height:0px; opacity: 0}
-    100%  {height:60px; opacity: 0.8}
+    100%  {height:57px; opacity: 0.8}
 }
 
 @-moz-keyframes navTextDrop {
     0%    {height:0px; opacity: 0}
-    100%  {height:60px; opacity: 0.8}
+    100%  {height:57px; opacity: 0.8}
 }
 
 
 @keyframes navTextDrop {
     0%    {height:0px; opacity: 0}
-    100%  {height:60px; opacity: 0.8}
+    100%  {height:57px; opacity: 0.8}
 }
 
 #expanded-nav li:hover{
@@ -428,6 +452,37 @@ nav ul.bar li a:hover {
     color: rgba(34, 129, 167, 1) !important;
 }
 
+#email-clipboard-success{
+    color: #3DA2AE;
+    background-color: white;
+    width: auto;
+    padding: 2px 10px;
+    border-radius: 3px;
+    font-weight: bold;
+    position: absolute;
+    right: 10px;
+    top: 6vh;
+    filter: drop-shadow(0px 3px 6px #222);
+    -webkit-animation: opacity0to1 0.07s linear 1;
+    -moz-animation: opacity0to1 0.07s linear 1;
+    animation: opacity0to1 0.07s linear 1;
+}
+
+@-webkit-keyframes opacity0to1 {
+    0%    {opacity:0;}
+    100%  {opacity: 1}
+}
+
+@-moz-keyframes opacity0to1 {
+    0%    {opacity:0;}
+    100%  {opacity: 1}
+}
+
+
+@keyframes opacity0to1 {
+    0%    {opacity:0;}
+    100%  {opacity: 1}
+}
 
 /* animation: 2s linear selectionHover 1; */
 @-webkit-keyframes selectionHover {
@@ -477,29 +532,91 @@ nav ul.bar li a:hover {
     line-height: 1.2em;
 }
 
-/*home stuff*/
+/*-------------------footer-------------------*/
+
+footer{
+    height:46px;
+    width:100%;
+    text-align:center;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #939393;
+    position: fixed;
+    bottom: 0;
+}
+
+footer p{
+    padding-top:4px;
+    font-size: 25px;
+    letter-spacing: 1px;
+}
+
+/*-------------------Home page-------------------*/
+
+.butterfly{
+    background-color: rgb(37,37,35);
+    width: 100%;
+    height: 100%;
+    color: white;
+}
+
+.butterfly .bg{
+    background-image: url(../images/backgrounds/moths-border.jpg);
+    background-size: contain;
+    background-repeat: space;
+    width: 100%;
+    height: 100%;
+    position: fixed; 
+}
+
+.page-content{
+    margin-left: 4vw;
+    margin-right: 4vw;
+    margin-top: 30px;
+}
+
+.page-content h1{
+    font-size: 220%;
+}
+
 .content-1{
     position: relative;
     top: -65px;
 }
 
+.content-2{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.content-2 .flex-3, .content-2 .flex-9{
+    flex-basis: 100%;
+}
+
+#artist-img{
+    background: url(../images/jill-w4.jpg);
+    background-size: cover;
+    background-position-y:top;
+    background-position-x: center;
+    min-height: 400px;
+    margin: 0 0 40px 0;
+}
+
 /*slideshow*/
 #home-slides{
     width:100%;
-    height: 400px;
+    height: 350px;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 #home-slides img{
-    flex-shrink: 0;
-    min-width:100%;
-    min-height: 100%;
+    height: 100%;
     position: absolute;
     display: none;
+    min-width: 100%;
 }
 
 .active{
@@ -535,30 +652,11 @@ nav ul.bar li a:hover {
     100%    {opacity: 0; }
 }
 
-/*footer*/
-
-footer{
-    height:32px;
-    width:100%;
-    text-align:center;
-    background-color:white; 
-    color: black;
-    position: fixed;
-    bottom: 0;
-    border-top: solid 0.5px rgba(115, 115, 115, 0.7);
-}
-
-footer p{
-    margin:0px;
-    padding-top:4px;
-}
-
-/*media*/
-
-
+/*-------------------media-------------------*/
 @media (min-width: 450px) {
-    body, div, p{ font-size: 20px;}
-
+    /*----css reset----*/
+    body, div, p{ font-size: 17px;}
+    p { letter-spacing: 0.5px;}
     .col-1 {width: 8.33%; display: inline-block}
     .col-2 {width: 16.66%; display: inline-block}
     .col-3 {width: 25%; display: inline-block}
@@ -572,33 +670,125 @@ footer p{
     .col-11 {width: 91.66%; display: inline-block}
     .col-12 {width: 100%; display: inline-block}
 
-    #home-slides{ height: 600px;}
-
+    /*----nav----*/
     .nav-line-height{ line-height: 42px !important;}
     #home-link{ min-width: 215px;}
     .name-logo{ font-size: 110%;}
     .sub-logo{ font-size: 87%; margin-bottom: -5px;}
 
     @-webkit-keyframes navTextDrop {
-    0%    {height:0px; opacity: 0}
-    100%  {height:85px; opacity: 0.8}
+        0%    {height:0px; opacity: 0}
+        100%  {height:71px; opacity: 0.8}
     }
 
     @-moz-keyframes navTextDrop {
         0%    {height:0px; opacity: 0}
-        100%  {height:85px; opacity: 0.8}
+        100%  {height:71px; opacity: 0.8}
     }
-
 
     @keyframes navTextDrop {
         0%    {height:0px; opacity: 0}
-        100%  {height:85px; opacity: 0.8}
+        100%  {height:71px; opacity: 0.8}
+    }
+
+    /*----home----*/
+    #home-slides{
+        width:100%;
+        height: 500px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    #home-slides img{
+        height: initial;
+        flex-shrink: 0;
+        min-width:100%;
+        min-height: 100%;
+        position: absolute;
+        display: none;
+    }
+
+    .page-content{
+        margin-left: 5vw;
+        margin-right: 5vw;
+        margin-top: 50px;
+    }
+
+    .page-content h1{
+        font-size: 200%;
+    }
+
+    #artist-img{
+        margin: 0 120px 40px 0;
     }
 
 }
 
 @media (min-width: 820px){
+    /*----css reset----*/
+    body, div, p{ font-size: 18px;}
+    p { letter-spacing: 0.5px;}
+
+    /*----home----*/
+    .page-content{
+        margin-left: 7vw;
+        margin-right: 7vw;
+        margin-top: 70px;
+    }
+
     #home-slides{ height: 800px; }
 
+    .page-content h1{
+        font-size: 250%;
+    }
+
+    .content-2{
+        flex-wrap: nowrap;
+    }
+
+    .content-2 .flex-3{
+        flex-basis: 300px;
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
+
+    .content-2 .flex-9{
+        flex-basis: 700px;
+        flex-grow: 1;
+        flex-shrink: 3;
+    }
+
+    .about-artist{
+        padding-left: 30px;
+    }
+
+    #artist-img{
+        min-height: 300px;
+        margin: 0px;
+    }
+
+}    
+
+@media (min-width: 1250px){
+    /*----home----*/
+    .page-content{
+        margin-left: 10vw;
+        margin-right: 10vw;
+    }
+
+    .content-2 .flex-3{
+        flex-basis: 300px;
+        flex-grow: 1;
+        flex-shrink: 0;
+    }
+
+    .content-2 .flex-9{
+        flex-basis: 850px;
+        flex-grow: 10;
+        flex-shrink: 1;
+    }
 }
 

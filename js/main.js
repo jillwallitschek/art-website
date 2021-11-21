@@ -3,6 +3,7 @@
 var navButton;
 var expandedNav;
 var showNavigation = false;
+var emailClipboardSuccess;
 
 //cursor
 var cursorTrail;
@@ -24,7 +25,9 @@ document.addEventListener('DOMContentLoaded', function() {
         li.addEventListener("click", navToURL);
         updateNavLiCSS(li);
     });
-    
+    var mailIcon = document.getElementById("mail-icon");
+    if (mailIcon) mailIcon.addEventListener("click", copyEmailToClipboard);
+
     //cursor
     cursorTrail = document.getElementById("cursor-trail");
 
@@ -53,10 +56,14 @@ function toggleNavigation(event){
     if (!event) return;
     if (!expandedNav) expandedNav = document.getElementById("expanded-nav");
     if (showNavigation){
-        expandedNav.classList.remove('expanded-nav');
+        expandedNav.classList.add('nav-hide');
+        setTimeout(()=>{
+            expandedNav.classList.remove('expanded-nav');
+        }, 200);
         showNavigation = false;
     }
     else{
+        expandedNav.classList.remove('nav-hide');
         expandedNav.classList.add('expanded-nav');
         showNavigation = true;
     }
@@ -77,6 +84,34 @@ function addSelectedClass(el){
 
 function removeSelectedClass(el){
     el.classList.remove("selected");
+}
+
+async function copyEmailToClipboard(event){
+    try {
+        const blob = new Blob(['jillwallitschek@gmail.com'], {type: 'text/plain'});
+        const email = new ClipboardItem({'text/plain': blob});
+        await navigator.clipboard.write([email]).then(()=>{
+            showCopyEmailSuccess(event);
+        })
+    }
+    catch(error){
+        if (!emailClipboardSuccess) emailClipboardSuccess = document.getElementById("email-clipboard-success");
+        emailClipboardSuccess.textContent = "jillwallitschek@gmail.com";
+        if (!emailClipboardSuccess.classList.contains("hide")) return;
+        emailClipboardSuccess.classList.remove("hide");
+        setTimeout(()=>{
+            emailClipboardSuccess.classList.add("hide")
+        }, 7000)
+    }
+}
+
+function showCopyEmailSuccess(event){
+    if (!emailClipboardSuccess) emailClipboardSuccess = document.getElementById("email-clipboard-success");
+    if (!emailClipboardSuccess.classList.contains("hide")) return;
+    emailClipboardSuccess.classList.remove("hide");
+    setTimeout(()=>{
+        emailClipboardSuccess.classList.add("hide")
+    }, 200)
 }
 
 //////////////////////cursors
