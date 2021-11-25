@@ -303,7 +303,9 @@ nav{
     width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 10;
-    position: relative;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
 }
 
 .nav-line-height{
@@ -572,6 +574,7 @@ footer p{
     margin-left: 4vw;
     margin-right: 4vw;
     margin-top: 30px;
+    margin-bottom: 90px;
 }
 
 .page-content h1{
@@ -594,7 +597,7 @@ footer p{
 }
 
 #artist-img{
-    background: url(../images/jill-w4.jpg);
+    background: url(../images/jill-w2.jpg);
     background-size: cover;
     background-position-y:top;
     background-position-x: center;
@@ -737,6 +740,7 @@ footer p{
         margin-left: 7vw;
         margin-right: 7vw;
         margin-top: 70px;
+        margin-bottom: 120px;
     }
 
     #home-slides{ height: 800px; }
