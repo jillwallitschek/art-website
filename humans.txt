@@ -2,8 +2,9 @@
 # The humans responsible & technology colophon
 
 # TEAM
-All art including this website was produced and copyrighted by me.
+All art including this website was produced and copyrighted by Jill R. Wallitschek.
 Website boilerplate/ lightbox is listed below
+Boilerplate served as the starting point for this site years ago when I was starting to code. Since then it has moved quite far from this format
 
 # THANKS
 Boilerplate:
@@ -14,6 +15,5 @@ Studio Gothic- Zeta Fonts:
 http://www.zetafonts.com/studio-gothic
 
 # TECHNOLOGY COLOPHON
-
     CSS3, HTML5
     Apache Server Configs, jQuery, Modernizr, Normalize.css

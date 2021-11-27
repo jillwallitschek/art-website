@@ -45,6 +45,8 @@ body{
     margin: 0;
     padding: 0;
     line-height: 1;
+    background-color: rgb(37,37,35);
+    color: white;
 }
 
 p::selection, div::selection, h1::selection, h2::selection, h3::selection, h4::selection, h5::selection, h6::selection, li::selection, a::selection{
@@ -144,6 +146,10 @@ h1, h2, h3, h4, h5, h6{
 
 .mt-70{
     margin-top: 70px !important;
+}
+
+.mt-40{
+    margin-top: 40px !important;
 }
 
 .mt-30{
@@ -534,13 +540,16 @@ nav ul.bar li a:hover {
     line-height: 1.2em;
 }
 
+/*-------------------main el-------------------*/
+
+
 /*-------------------footer-------------------*/
 
 footer{
     height:46px;
     width:100%;
     text-align:center;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(15, 15, 15, 1);
     color: #939393;
     position: fixed;
     bottom: 0;
@@ -552,108 +561,6 @@ footer p{
     letter-spacing: 1px;
 }
 
-/*-------------------Home page-------------------*/
-
-.butterfly{
-    background-color: rgb(37,37,35);
-    width: 100%;
-    height: 100%;
-    color: white;
-}
-
-.butterfly .bg{
-    background-image: url(../images/backgrounds/moths-border.jpg);
-    background-size: contain;
-    background-repeat: space;
-    width: 100%;
-    height: 100%;
-    position: fixed; 
-}
-
-.page-content{
-    margin-left: 4vw;
-    margin-right: 4vw;
-    margin-top: 30px;
-    margin-bottom: 90px;
-}
-
-.page-content h1{
-    font-size: 220%;
-}
-
-.content-1{
-    position: relative;
-    top: -65px;
-}
-
-.content-2{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
-}
-
-.content-2 .flex-3, .content-2 .flex-9{
-    flex-basis: 100%;
-}
-
-#artist-img{
-    background: url(../images/jill-w2.jpg);
-    background-size: cover;
-    background-position-y:top;
-    background-position-x: center;
-    min-height: 400px;
-    margin: 0 0 40px 0;
-}
-
-/*slideshow*/
-#home-slides{
-    width:100%;
-    height: 350px;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    justify-content: center;
-}
-
-#home-slides img{
-    height: 100%;
-    position: absolute;
-    display: none;
-    min-width: 100%;
-}
-
-.active{
-    display: block !important;
-    opacity: 1 !important;
-}
-
-.slide-fade{
-    z-index: 2;
-    -webkit-animation: fadeOut 6s linear 1;
-    -moz-animation: fadeOut 6s linear 1;
-    animation: fadeOut 6s linear 1;
-}
-
-@-webkit-keyframes fadeOut {
-    0%      {opacity: 1; }
-        /*change start:*/
-    85%     {opacity: 1; }
-    100%    {opacity: 0; }
-}
-
-@-moz-keyframes fadeOut {
-    0%      {opacity: 1; }
-        /*change start:*/
-    85%     {opacity: 1; }
-    100%    {opacity: 0; }
-}
-
-@keyframes fadeOut {
-    0%      {opacity: 1; }
-        /*change start:*/
-    85%     {opacity: 1; }
-    100%    {opacity: 0; }
-}
 
 /*-------------------media-------------------*/
 @media (min-width: 450px) {
@@ -694,40 +601,6 @@ footer p{
         100%  {height:71px; opacity: 0.8}
     }
 
-    /*----home----*/
-    #home-slides{
-        width:100%;
-        height: 500px;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-    }
-
-    #home-slides img{
-        height: initial;
-        flex-shrink: 0;
-        min-width:100%;
-        min-height: 100%;
-        position: absolute;
-        display: none;
-    }
-
-    .page-content{
-        margin-left: 5vw;
-        margin-right: 5vw;
-        margin-top: 50px;
-    }
-
-    .page-content h1{
-        font-size: 200%;
-    }
-
-    #artist-img{
-        margin: 0 120px 40px 0;
-    }
-
 }
 
 @media (min-width: 820px){
@@ -735,64 +608,9 @@ footer p{
     body, div, p{ font-size: 18px;}
     p { letter-spacing: 0.5px;}
 
-    /*----home----*/
-    .page-content{
-        margin-left: 7vw;
-        margin-right: 7vw;
-        margin-top: 70px;
-        margin-bottom: 120px;
-    }
-
-    #home-slides{ height: 800px; }
-
-    .page-content h1{
-        font-size: 250%;
-    }
-
-    .content-2{
-        flex-wrap: nowrap;
-    }
-
-    .content-2 .flex-3{
-        flex-basis: 300px;
-        flex-grow: 1;
-        flex-shrink: 1;
-    }
-
-    .content-2 .flex-9{
-        flex-basis: 700px;
-        flex-grow: 1;
-        flex-shrink: 3;
-    }
-
-    .about-artist{
-        padding-left: 30px;
-    }
-
-    #artist-img{
-        min-height: 300px;
-        margin: 0px;
-    }
-
 }    
 
 @media (min-width: 1250px){
-    /*----home----*/
-    .page-content{
-        margin-left: 10vw;
-        margin-right: 10vw;
-    }
 
-    .content-2 .flex-3{
-        flex-basis: 300px;
-        flex-grow: 1;
-        flex-shrink: 0;
-    }
-
-    .content-2 .flex-9{
-        flex-basis: 850px;
-        flex-grow: 10;
-        flex-shrink: 1;
-    }
 }
 

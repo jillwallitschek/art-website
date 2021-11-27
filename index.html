@@ -3,106 +3,76 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Art by Jill Wallitschek</title>
+        <title>Jill Wallitschek</title>
         
         <meta name="description" content="Art by Jill Rosemarie Wallitschek. Commissions for artwork including family and pet portraits are always accepted through email or instagram.">
         <meta name="author" content="Jill Wallitschek">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="keywords" content="art, painting, self-portraits, pet portraits,">
         <meta property="og:image" content="img/Acrylic-SunFlower.jpg">
-        <!--manifest-->
-        <link rel="manifest" href="site.webmanifest">
         <!-- Place favicon.ico in the root directory -->
         <link rel="apple-touch-icon" href="icon.png">
         <!--css sheets-->
         <link rel="stylesheet" href="css/site.css">
-        <link rel="stylesheet" href="css/lightbox.css">
-        <!-- modal lightbox -->
-        <script type="text/javascript" src="js/lightbox-plus-jquery.js"></script>
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/print.css">
+        <!--jquery-->
+        <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
         <!--my scripts-->
-        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="js/nav-footer.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
         <!--for developing-->
         <script type="text/javascript" src="http://livejs.com/live.js"></script>    
     </head>
     <body class="butterfly"> 
         <div id="cursor-trail" class="cursor-animation opacity-0"></div>
-        <nav>
-            <ul class="bar">
-                <li class="text-left pointer">
-                    <a class="no-select" href="index.html" id="home-link">
-                        <div class="link uppercase name-logo">Jill Rosemarie</div>
-                        <div class="link uppercase sub-logo">Contemporary Art</div>
-                    </a>
-                </li>
-                <li class="pointer">
-                    <span class="relative">
-                        <a class="hover-selection material-icons absolute font-size-40 nav-line-height no-select" id="nav-button">menu</a>
-                    </span>
-                </li>
-                <li class="text-right pointer">
-                    <span class="relative" style="left:-25px;">
-                        <a id="mail-icon" class="material-icons hover-selection absolute font-size-35 nav-line-height">mail</a>
-                    </span>
-                </li>
-            </ul>
-            <div id="expanded-nav" class="nav-hide">
-                <div class="expanded-nav-container">
-                    <ul id="real-nav">
-                        <li id="home" class="expand-hover no-select">Home</li>
-                        <li id="paintings" class="expand-hover no-select">Paintings</li>
-                        <li id="pencil" class="expand-hover no-select">Pencil</li>
-                        <li id="graphite" class="expand-hover no-select">Graphite</li>
-                        <li id ="websites" class="expand-hover no-select">Websites</li>
-                    </ul>
-                </div>
-            </div>
-            <div id="email-clipboard-success" class="hide">Copied to Clipboard!</div>
-        </nav>
+        <nav id="nav-holder"></nav>
         <!--body-->
-        <div class="row content-1">
-            <div class="col-12">
-                <div id="home-slides" data-component="home-slides">
-                    <img class="home-slide" src="images/slideshow/back-to-basics.jpg" alt="Reconnect to Basics"/>
-                    <img class="home-slide" src="images/slideshow/vulnerability.jpg" alt="Vulnerability"/>
-                    <img class="home-slide" src="images/slideshow/sunflower.jpg" alt="Sun Flower"/>
-                    <img class="home-slide" src="images/slideshow/brain.jpg" alt="Brains"/>
-                    <img class="home-slide" src="images/slideshow/moths.jpg" alt="Luna Moth"/>
-                </div>
-            </div>
-            <div class="page-content">
-                <h1 class="uppercase">Jill Wallitschek</h1>
-                <div class="mt-30 content-2">
-                    <div class="flex-3" id="artist-img">
-                        &nbsp;
+        <main>
+            <div class="row content-1">
+                <div class="col-12">
+                    <div id="home-slides" data-component="home-slides">
+                        <img class="home-slide" src="images/slideshow/back-to-basics.jpg" alt="Reconnect to Basics"/>
+                        <img class="home-slide" src="images/slideshow/vulnerability.jpg" alt="Vulnerability"/>
+                        <img class="home-slide" src="images/slideshow/sunflower.jpg" alt="Sun Flower"/>
+                        <img class="home-slide" src="images/slideshow/brain.jpg" alt="Brains"/>
+                        <img class="home-slide" src="images/slideshow/moths.jpg" alt="Luna Moth"/>
                     </div>
-                    <div class="flex-9">
-                        <div class="about-artist">
-                            <p class="justify">
-                                For some, the institutions of our upringing inform who we're supposed to be and who we're not supposed to be. With the best of intentions, we're taught what we should believe and how we should behave. It's binary, simplified, and uninclusive.  Detached from our internal compass.  A game with right or wrong. If we win, most of us also lose.
-                            </p>
-                            <p class="mt-20 justify">
-                                In practice, life could never be simplified so easily. Good comes with evil.  We feel and we make mistakes.  And regarless of whether we accept it, we continue to coexist with our contradictions.
-                            </p>
-                            <p class="mt-20 justify">
-                                I use art to both explore and honor my identity idependent of these expectations and sometimes in response to them.  I'm interested in the dichotomy of our feelings, beliefs, and many of the societal constructs I've grown up with.  I use art to express what I cannot always articulate through words.  Such expression takes form through subject matter, structure, brush stroke, color, execution, and medium.  I use art to document and honor my journey. My art is for me.
-                            </p>
+                </div>
+                <div class="page-content">
+                    <h1 class="uppercase">Jill Wallitschek</h1>
+                    <div class="mt-30 content-2">
+                        <div class="flex-3" id="artist-img">
+                            &nbsp;
+                        </div>
+                        <div class="flex-9">
+                            <div class="about-artist">
+                                <p class="justify">
+                                    For some, the institutions of our upringing inform who we're supposed to be and who we're not supposed to be. With the best of intentions, we're taught what we should believe and how we should behave. It's binary, simplified, and uninclusive.  Detached from our internal compass.  A game with right or wrong. If we win, most of us also lose.
+                                </p>
+                                <p class="mt-20 justify">
+                                    In practice, life could never be simplified so easily. Good comes with evil.  We feel and we make mistakes.  And regarless of whether we accept it, we continue to coexist with our contradictions.
+                                </p>
+                                <p class="mt-20 justify">
+                                    I use art to both explore and honor my identity idependent of these expectations and sometimes in response to them.  I'm interested in the dichotomy of our feelings, beliefs, and many of the societal constructs I've grown up with.  I use art to express what I cannot always articulate through words.  Such expression takes form through subject matter, structure, brush stroke, color, execution, and medium.  I use art to document and honor my journey. My art is for me.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <h1 class="text-right mt-40">Selected Works</h1>
+                    <div class="mt-30 content-3">
+                        <div class="col-3">
+                            <img src="" alt="" />
+                            <!--title-->
+                            <!--quote-->
                         </div>
                     </div>
                 </div>
-                <h2 class="text-right">Selected Works</h2>
-                <div class="mt-30 content-3">
-                    <div class="col-3">
-                        <img src="" alt="" />
-                        <!--title-->
-                        <!--quote-->
-                    </div>
-                </div>
             </div>
-        </div>
+        </main>
+
         <!--footer-->
-        <footer>
-            <p><small>&copy; Copyright 2021 Jill R. Wallitschek</small></p>
-        </footer>
+        <footer id="footer-holder"></footer>
 
         <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
         <script>

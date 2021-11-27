@@ -1,0 +1,62 @@
+@charset "utf-8";
+@font-face {
+    font-family:studiogothic;
+    src:url("../fonts/studio-gothic/StudioGothicAlternate-ExtraLigh Trial.ttf");
+}
+@font-face {
+    font-family: "Stick No Bills";
+    src: url("../fonts/Stick_No_Bills/StickNoBills-VariableFont_wght.ttf");
+}
+@font-face {
+    font-family: railway;
+    src: url("../fonts/Raleway/Raleway-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: 'Material Icons';
+    src: url(../fonts/material-design-icons-3.0.1/iconfont/MaterialIcons-Regular.eot); /* For IE6-8 */
+    src: url(../fonts/material-design-icons-3.0.1/iconfont/MaterialIcons-Regular.ttf); 
+    src: url(../fonts/material-design-icons-3.0.1/iconfont/MaterialIcons-Regular.woff); 
+    src: url(../fonts/material-design-icons-3.0.1/iconfont/MaterialIcons-Regular.woff2); 
+}
+
+/*-------------------portfolio styling-------------------*/
+
+#portfolio{
+    width: calc(100% - 10px);
+    display: flex;
+    margin: 0 5px 20px 5px;
+}
+
+.flex-column{
+    display: inline-flex;
+    flex: 1 1 100%;
+    flex-flow: column;
+    box-sizing: content-box;
+    margin: 0 5px;
+}
+
+.flex-a{
+    display:block;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.flex-img{
+    display: block;
+    width: 100%;
+}
+
+
+/*-------------------media-------------------*/
+@media (min-width: 450px) {
+
+}
+
+@media (min-width: 820px){
+
+}    
+
+@media (min-width: 1250px){
+
+}
+
