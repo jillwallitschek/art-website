@@ -109,12 +109,12 @@ h1, h2, h3, h4, h5, h6{
     display: flex;
 }
 
-.uppercase{
-    text-transform: uppercase;
-}
-
 .inline-block{
     display:inline-block;
+}
+
+.uppercase{
+    text-transform: uppercase;
 }
 
 .vh-100{
@@ -148,6 +148,10 @@ h1, h2, h3, h4, h5, h6{
     margin-top: 70px !important;
 }
 
+.mt-50{
+    margin-top: 50px !important;
+}
+
 .mt-40{
     margin-top: 40px !important;
 }
@@ -166,6 +170,10 @@ h1, h2, h3, h4, h5, h6{
 
 .mt-5{
     margin-top: 5px !important;
+}
+
+.mb-20{
+    margin-bottom: 20px !important;
 }
 
 .mb-10{
@@ -214,6 +222,16 @@ h1, h2, h3, h4, h5, h6{
 
 .text-justify{
     text-align: justify;
+}
+
+a, a:visited{
+    color: rgb(98, 181, 214);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+a:hover{
+    color: rgb(117, 231, 117);
 }
 
 .relative{
@@ -337,6 +355,7 @@ nav ul.bar li{
 
 nav ul.bar li a {
     opacity: 1;
+    color: white;
 }
 
 nav ul.bar li a:hover {

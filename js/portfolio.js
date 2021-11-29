@@ -4,34 +4,99 @@ var lastColumns = null;
 var lightBoxGalleryName = null;
 //urls and alts tb received from backend in future
 var paintings = [
+    "sketch-theoforclare.jpg",
+    "Acrylic-ReconnectToBasics.jpg",
     "Acrylic-AgentOrangeJuice.jpg",
+    "MixedMediaCollage-ArtistTradingCards.jpg",
     "Acrylic-Conventions.jpg",
-    "Acrylic-Flamingo.jpg",
-    "Acrylic-Glutony.jpg",
-    "Acrylic-MadeFromWheels.jpg",
     "Acrylic-OrangeSmiles.jpg",
     "Acrylic-ApplePlanet.jpg",
     "Acrylic-Stereotyping.jpg",
     "Acrylic-SunFlower.jpg",
+    "Acrylic-Vulnerability.jpg",
+    "Acrylic-Bear.jpg",
+    "Acrylic-Glutony.jpg",
     "Acrylic-OrangeBuggie.jpg",
     "Acrylic-MartinistoSpace.jpg",
-    "Acrylic-ReconnectToBasics.jpg",
-    "Acrylic-Bear.jpg",
-    "sketch-theoforclare.jpg",
+    "Acrylic-MadeFromWheels.jpg",
     "Acrylic-Thirsty.jpg",
     "Pencil-Punk.jpg",
     "Gouache-PushingDaisies.jpg",
-    "Watercolor-NatureisWise.jpg",
+    "Acrylic-Flamingo.jpg",    
+    "acrylic-chocolate-bunny.jpg",
+    "acrylic-snake-dove.jpg",
+    "acrylic-snake-lamb.jpg",
+    "acrylic-snake-soccer.jpg",
+    "Acrylic-Theo.jpg",
+    "Acrylic-Skye.jpg",
+]
+
+var watercolorPencil = [
+    "watercolor-brain.jpg",
+    "watercolor-flower.jpg",
+    "watercolor-hair.jpg",
     "Watercolor-Portrait.jpg",
     "Watercolor-SelfPortrait.jpg",
-    "MixedMediaCollage-ArtistTradingCards.jpg"
+    "Pencil-KingFishers.jpg",
+    "watercolor-hands-blue.jpg",
+    "watercolor-hands-pink.jpg",
+    "Pencil-BeetFarms.jpg",
+    "Pencil-Agave.jpg",
+    "Pencil-Home.jpg",
+    "watercolor-horse-lost.jpg",
+    "Pencil-hawk.jpg",
+    "Pencil-FungalFriends.jpg",
+    "Pencil-KatrinBerndt.jpg",
+    "Pencil-IrishTreasure.jpg",
+    "Watercolor-NatureisWise.jpg",
+    "Watercolor-FearShark.jpg",
+    "Watercolor-FearSpider.jpg",
+    "Watercolor-FearClown.jpg",
+    "Watercolor-Antelope.jpg",
 ]
+
+var blackAndWhite = [
+    "watercolor-fester.jpg",
+    "Watercolor-Caterpillar.jpg",
+    "Pencil-VitruvianReverseCentaur.jpg",
+    "Sketch-Poem.jpg",
+    "Sketch-Bear.jpg",
+    "Sketch-Camouflage.jpg",
+    "Sketch-gecko.jpg",
+    "Sketch-lizard.jpg",
+    "Sketch-hummingbird.jpg",
+    "Sketch-flow.jpg",
+    "Sketch-stemandBud.jpg",
+    "Sketch-Potato.jpg",
+    "Sketch-DogNash.jpg",
+    "pencil-charlie.jpg",
+    "watercolor-matriarchy.jpg",
+    "Sketch-Snow.jpg",
+    "Sketch-Penelope.jpg",
+    "Sketch-DogDobby.jpg",
+]
+
+//reminder for digital
+///moths
 
 //////////////////////////listeners
 document.addEventListener('DOMContentLoaded', function(event) {
     //to be updated by page
-    lightBoxGalleryName = "gallery1";
-    images = makeJSON(paintings);
+    let location = document.location.href;
+    console.log(location)
+    if (location.includes("pencil")){
+        lightBoxGalleryName = "gallery2";
+        images = makeJSON(watercolorPencil);
+    }
+    else if (location.includes("graphite")){
+        lightBoxGalleryName = "gallery3";
+        images = makeJSON(blackAndWhite);
+    }
+    else if (location.includes("paintings")){
+        lightBoxGalleryName = "gallery1";
+        images = makeJSON(paintings);
+    }
+
     insertColumns();
 });
 
@@ -79,8 +144,7 @@ function calculateColumns(){
     if (windowWidth <= 450) columns = 1;
     else if (windowWidth <= 750) columns = 2;
     else if (windowWidth <= 1050) columns = 3;
-    else if (windowWidth <= 1350) columns = 4;
-    else columns = 5;
+    else columns = 4;
     return columns;
 }
 
@@ -94,6 +158,7 @@ function makeJSON(imgArray){
         }
         jsonArray.push(entry);
     })
+    console.log(jsonArray)
     return jsonArray;
 }
 
