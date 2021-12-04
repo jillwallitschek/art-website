@@ -234,6 +234,14 @@ a:hover{
     color: rgb(117, 231, 117);
 }
 
+.mobile-only{
+    display: initial;
+}
+
+.desktop-only{
+    display: none;
+}
+
 .relative{
     position: relative;
 }
@@ -618,6 +626,14 @@ footer p{
     @keyframes navTextDrop {
         0%    {height:0px; opacity: 0}
         100%  {height:71px; opacity: 0.8}
+    }
+
+    .mobile-only{
+        display: none;
+    }
+
+    .desktop-only{
+        display: initial;
     }
 
 }

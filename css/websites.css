@@ -94,13 +94,26 @@
     border-radius: 3px;
 }
 
+.videos{
+    white-space: nowrap;
+}
+
+.videos p{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.videos video{
+    width: 100%;
+}
+
 .older-work{
     font-size: 0;
     margin-top: 30px;
 }
 
 .older-work a{
-    margin: 0 5px;
+    margin: 5px 5px;
     display: inline-block;
 }
 
@@ -157,6 +170,24 @@
         margin-left: 20px;
         width: calc(45% - 20px);
         line-height: 145%;
+    }
+
+    .videos div{
+        vertical-align: middle;
+    }
+
+    .videos p{
+        margin: 0 5px 0 0;
+        text-align: right;
+    }
+
+    .videos video{
+        padding: 0 5px;
+    }
+
+    .older-work a{
+        margin: 0px 5px;
+        display: inline-block;
     }
 
 }
