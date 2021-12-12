@@ -317,6 +317,15 @@ AddDefaultCharset utf-8
 # (6) Set %{ENV:PROTO} variable, to allow rewrites to redirect with the
 #     appropriate schema automatically (http or https).
 
+
+*I added the following for force https:
+RewriteEngine On 
+
+RewriteCond %{HTTPS} !=on 
+
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301] 
+
+*this was already there
 <IfModule mod_rewrite.c>
 
     # (1)

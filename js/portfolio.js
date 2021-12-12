@@ -44,7 +44,7 @@ var watercolorPencil = [
     "Pencil-Agave.jpg",
     "Pencil-Home.jpg",
     "watercolor-horse-lost.jpg",
-    "Pencil-hawk.jpg",
+    "pencil-hawk.jpg",
     "Pencil-FungalFriends.jpg",
     "Pencil-KatrinBerndt.jpg",
     "Pencil-IrishTreasure.jpg",
@@ -83,7 +83,6 @@ var blackAndWhite = [
 document.addEventListener('DOMContentLoaded', function(event) {
     //to be updated by page
     let location = document.location.href;
-    console.log(location)
     if (location.includes("pencil")){
         lightBoxGalleryName = "gallery2";
         images = makeJSON(watercolorPencil);
@@ -158,7 +157,6 @@ function makeJSON(imgArray){
         }
         jsonArray.push(entry);
     })
-    console.log(jsonArray)
     return jsonArray;
 }
 
