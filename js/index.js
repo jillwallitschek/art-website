@@ -26,13 +26,15 @@ document.addEventListener("mousemove", function(event){
 //////////////////////cursors
 function trackCursor(event){
     if (!cursorTrail) return;
+    var scrollTopPostion = window.scrollY;
+    if (scrollTopPostion === null || scrollTopPostion === undefined) scrollTopPostion = 0;
     lastMouseCoord[0] = event.pageX;
-    lastMouseCoord[1] = event.pageY;
+    lastMouseCoord[1] = event.pageY - scrollTopPostion;
     if (!cursorTrail.classList.contains("cursor-animation")){
         cursorTrail.classList.add("cursor-animation");
         cursorTrail.classList.remove("hide");
     }
-    if (event.target.nodeName == "A" || event.target.classList.contains("hover-selection") || event.target.classList.contains("link")){
+    if (event.target.nodeName == "A" || event.target.classList.contains("hover-selection") || event.target.classList.contains("link") || event.target.classList.contains("no-trail")){
         if (!cursorTrail.classList.contains("hide")) setTimeout(()=>{cursorTrail.classList.add("hide");}, cursorTrailDelay);
         return;
     }
@@ -46,7 +48,7 @@ function trackCursor(event){
             cursorTrail.classList.remove('opacity-0')
         }
         cursorTrail.style.left = event.pageX + "px";
-        cursorTrail.style.top = event.pageY + "px";
+        cursorTrail.style.top = event.pageY - scrollTopPostion + "px";
     }, cursorTrailDelay);
     removeAnimationOnStationary(event);
 }
