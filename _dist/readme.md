@@ -1,0 +1,1 @@
+dist files should be put in ec2 instance here
